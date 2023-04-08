@@ -38,10 +38,10 @@ class Welcome extends StatelessWidget {
                   children: [
                     const SizedBox(height: 40),
                     Text(
-                      'Welcome to Aikini'.toUpperCase(),
+                      'Hello FlexyCodes'.toUpperCase(),
                       style: const TextStyle(
                         fontFamily: 'SourceSansPro',
-                        fontSize: 22,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
