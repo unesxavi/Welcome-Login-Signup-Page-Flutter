@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_page/widgets/divider.dart';
+import 'package:flutter_auth_page/widgets/socials.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_auth_page/constants.dart';
 
@@ -13,7 +15,7 @@ class Signup extends StatelessWidget {
           onPressed: () {
             Navigator.popAndPushNamed(context, '/');
           },
-          backgroundColor: Colors.purple[400],
+          backgroundColor: kPrimaryColor,
           child: const Icon(Icons.home),
         ),
         body: SizedBox(
@@ -190,6 +192,8 @@ class Signup extends StatelessWidget {
                         ),
                       ],
                     ),
+                    const OrDivider(),
+                    const Social(),
                   ],
                 ),
               ),

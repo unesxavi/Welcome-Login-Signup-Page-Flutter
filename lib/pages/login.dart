@@ -11,9 +11,9 @@ class Login extends StatelessWidget {
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.popAndPushNamed(context, '/');
           },
-          backgroundColor: Colors.purple[400],
+          backgroundColor: kPrimaryColor,
           child: const Icon(Icons.home),
         ),
         body: SizedBox(
