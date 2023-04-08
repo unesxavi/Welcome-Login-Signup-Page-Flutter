@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_auth_page/constants.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -47,16 +48,18 @@ class Welcome extends StatelessWidget {
                     const SizedBox(height: 40),
                     SvgPicture.asset(
                       'assets/icons/chat.svg',
-                      width: 290,
+                      width: 300,
                     ),
                     const SizedBox(height: 50),
                     SizedBox(
-                      width: 280,
+                      width: 300,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/login');
+                        },
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                              const Color(0xFF6F35A5)),
+                          backgroundColor:
+                              MaterialStateProperty.all(kPrimaryColor),
                           padding: MaterialStateProperty.all(
                               const EdgeInsets.all(15)),
                           foregroundColor:
@@ -80,12 +83,14 @@ class Welcome extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     SizedBox(
-                      width: 280,
+                      width: 300,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/signup');
+                        },
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                              const Color(0xFFF1E6FF)),
+                          backgroundColor:
+                              MaterialStateProperty.all(kPrimaryLightColor),
                           padding: MaterialStateProperty.all(
                               const EdgeInsets.all(15)),
                           foregroundColor:

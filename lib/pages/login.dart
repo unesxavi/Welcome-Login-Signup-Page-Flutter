@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:flutter_auth_page/constants.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -7,17 +9,6 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text(
-            'Log in',
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          backgroundColor: Colors.purple,
-        ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.pop(context);
@@ -26,100 +17,180 @@ class Login extends StatelessWidget {
           child: const Icon(Icons.home),
         ),
         body: SizedBox(
+          // color: Colors.amber[100],
           width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+          height: double.infinity,
+          child: Stack(
             children: [
-              Container(
-                width: 300,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(66),
-                  color: Colors.purple[100],
-                ),
-                child: const TextField(
-                  obscureText: false,
-                  keyboardType: TextInputType.emailAddress,
-                  textInputAction: TextInputAction.done,
-                  decoration: InputDecoration(
-                    hintText: "Your Email :",
-                    hintStyle: TextStyle(
-                      fontSize: 19,
-                    ),
-                    // labelText: "Email :",
-                    labelStyle: TextStyle(
-                      fontSize: 22,
-                    ),
-                    // border: OutlineInputBorder(),
-                    border: InputBorder.none,
-                    prefixIcon: Icon(
-                      Icons.person,
-                      color: Colors.purple,
-                    ),
-                  ),
+              Positioned(
+                top: 0,
+                left: 0,
+                child: Image.asset(
+                  "assets/images/main_top.png",
+                  width: 150,
                 ),
               ),
-              Container(
-                width: 300,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                margin: const EdgeInsets.symmetric(vertical: 18),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(66),
-                  color: Colors.purple[100],
-                ),
-                child: const TextField(
-                  obscureText: true,
-                  keyboardType: TextInputType.visiblePassword,
-                  textInputAction: TextInputAction.done,
-                  decoration: InputDecoration(
-                    hintText: "Password :",
-                    hintStyle: TextStyle(
-                      fontSize: 19,
-                    ),
-                    // labelText: "Email :",
-                    labelStyle: TextStyle(
-                      fontSize: 22,
-                    ),
-                    // border: OutlineInputBorder(),
-                    border: InputBorder.none,
-                    prefixIcon: Icon(
-                      Icons.lock,
-                      color: Colors.purple,
-                    ),
-                    suffixIcon: Icon(
-                      Icons.visibility,
-                      color: Colors.purple,
-                    ),
-                  ),
+              Positioned(
+                bottom: 0,
+                right: 0,
+                child: Image.asset(
+                  "assets/images/login_bottom.png",
+                  width: 150,
                 ),
               ),
-              Container(
-                width: 300,
-                margin: const EdgeInsets.all(0),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.purple),
-                    padding:
-                        MaterialStateProperty.all(const EdgeInsets.all(20)),
-                    foregroundColor: MaterialStateProperty.all(Colors.white60),
-                    shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(66),
+              SizedBox(
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 40),
+                    Text(
+                      'Login'.toUpperCase(),
+                      style: const TextStyle(
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ),
-                  child: const Text(
-                    'Log in',
-                    style: TextStyle(
-                      fontSize: 27,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                    const SizedBox(height: 40),
+                    SvgPicture.asset(
+                      'assets/icons/login.svg',
+                      width: 260,
                     ),
-                  ),
+                    const SizedBox(height: 50),
+                    Container(
+                      width: 300,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(66),
+                        color: kPrimaryLightColor,
+                      ),
+                      child: const TextField(
+                        obscureText: false,
+                        keyboardType: TextInputType.emailAddress,
+                        textInputAction: TextInputAction.done,
+                        decoration: InputDecoration(
+                          hintText: "Your Email :",
+                          hintStyle: TextStyle(
+                            fontFamily: 'SourceSansPro',
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                          ),
+                          // labelText: "Email :",
+                          labelStyle: TextStyle(
+                            fontSize: 18,
+                          ),
+                          // border: OutlineInputBorder(),
+                          border: InputBorder.none,
+                          prefixIcon: Icon(
+                            Icons.person,
+                            color: kPrimaryColor,
+                            size: 18,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Container(
+                      width: 300,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(66),
+                        color: kPrimaryLightColor,
+                      ),
+                      child: const TextField(
+                        obscureText: false,
+                        keyboardType: TextInputType.emailAddress,
+                        textInputAction: TextInputAction.done,
+                        decoration: InputDecoration(
+                          hintText: "Password :",
+                          hintStyle: TextStyle(
+                            fontFamily: 'SourceSansPro',
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                          ),
+                          // labelText: "Email :",
+                          labelStyle: TextStyle(
+                            fontSize: 20,
+                          ),
+                          // border: OutlineInputBorder(),
+                          border: InputBorder.none,
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            color: kPrimaryColor,
+                            size: 18,
+                          ),
+                          suffixIcon: Icon(
+                            Icons.visibility,
+                            color: kPrimaryColor,
+                            size: 18,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    SizedBox(
+                      width: 300,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/login');
+                        },
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(kPrimaryColor),
+                          padding: MaterialStateProperty.all(
+                              const EdgeInsets.all(15)),
+                          foregroundColor:
+                              MaterialStateProperty.all(Colors.white60),
+                          shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(66),
+                            ),
+                          ),
+                        ),
+                        child: Text(
+                          'Login'.toUpperCase(),
+                          style: const TextStyle(
+                            fontFamily: 'SourceSansPro',
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Dont't have an Account ? ",
+                          style: TextStyle(
+                            color: kPrimaryColor,
+                            fontFamily: 'SourceSansPro',
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/signup');
+                          },
+                          child: const Text(
+                            'Sign Up',
+                            style: TextStyle(
+                              color: kPrimaryColor,
+                              fontFamily: 'SourceSansPro',
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ],
