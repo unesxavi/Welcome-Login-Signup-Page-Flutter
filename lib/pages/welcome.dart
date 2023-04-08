@@ -35,64 +35,75 @@ class Welcome extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 35),
-                    const Text(
-                      'Welcome to Aikini',
-                      style: TextStyle(
+                    const SizedBox(height: 40),
+                    Text(
+                      'Welcome to Aikini'.toUpperCase(),
+                      style: const TextStyle(
                         fontFamily: 'SourceSansPro',
-                        fontSize: 16,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 35),
+                    const SizedBox(height: 40),
                     SvgPicture.asset(
                       'assets/icons/chat.svg',
-                      width: 350,
+                      width: 290,
                     ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.purple),
-                        padding:
-                            MaterialStateProperty.all(const EdgeInsets.all(20)),
-                        foregroundColor:
-                            MaterialStateProperty.all(Colors.white60),
-                        shape: MaterialStateProperty.all(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(66),
+                    const SizedBox(height: 50),
+                    SizedBox(
+                      width: 280,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                              const Color(0xFF6F35A5)),
+                          padding: MaterialStateProperty.all(
+                              const EdgeInsets.all(15)),
+                          foregroundColor:
+                              MaterialStateProperty.all(Colors.white60),
+                          shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(66),
+                            ),
+                          ),
+                        ),
+                        child: Text(
+                          'Login'.toUpperCase(),
+                          style: const TextStyle(
+                            fontFamily: 'SourceSansPro',
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
                           ),
                         ),
                       ),
-                      child: const Text(
-                        'Login',
-                        style: TextStyle(
-                          fontSize: 27,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
                     ),
-                    const SizedBox(height: 22),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.purple),
-                        padding:
-                            MaterialStateProperty.all(const EdgeInsets.all(20)),
-                        foregroundColor:
-                            MaterialStateProperty.all(Colors.white60),
-                        shape: MaterialStateProperty.all(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(66),
+                    const SizedBox(height: 16),
+                    SizedBox(
+                      width: 280,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                              const Color(0xFFF1E6FF)),
+                          padding: MaterialStateProperty.all(
+                              const EdgeInsets.all(15)),
+                          foregroundColor:
+                              MaterialStateProperty.all(Colors.white60),
+                          shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(66),
+                            ),
                           ),
                         ),
-                      ),
-                      child: const Text(
-                        'Signup',
-                        style: TextStyle(
-                          fontSize: 27,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                        child: Text(
+                          'Signup'.toUpperCase(),
+                          style: const TextStyle(
+                            fontFamily: 'SourceSansPro',
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
